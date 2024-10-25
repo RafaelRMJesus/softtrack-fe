@@ -1,4 +1,4 @@
-import { CloudSVG, LinesSVG } from "@/svgs/svgs";
+"git add .import { CloudSVG, LinesSVG } from "@/svgs/svgs";
 import {
   ChartLine,
   ChevronRightIcon,
@@ -41,7 +41,7 @@ export const VisionSection = () => {
     <>
       <div className="py-12 lg:py-24 relative container mx-auto px-4 md:px-8 lg:px-16 xl:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-6">
             {visionData.map((vision, index) => (
               <a
                 className="group flex flex-col justify-center p-5 border-2 border-black bg-background hover:bg-accent hover:text-accent-foreground transition-all duration-300 translate-x-[-4px] translate-y-[-4px] rounded-md shadow-[4px_4px_0px_black] hover:translate-x-[0px] hover:translate-y-[0px] hover:shadow-none"

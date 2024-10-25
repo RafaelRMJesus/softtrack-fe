@@ -292,7 +292,7 @@ export function ContractManagementPage() {
                         <div className={"col-span-2"}>
                             <GraficoPrevisaoDemanda/>
                         </div>
-                        <GraficoRetrabalho />
+                        <GraficoRetrabalho/>
                     </div>
 
                     <ModalContract show={showModal} onClose={() => setShowModal(false)}
@@ -300,6 +300,5 @@ export function ContractManagementPage() {
                 </>
             )}
         </div>
-    )
-        ;
+    );
 }

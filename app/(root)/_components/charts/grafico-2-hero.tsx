@@ -53,7 +53,7 @@ export function Grafico2Hero() {
   }, []);
 
   return (
-    <Card className="flex flex-col overflow-hidden border-none shadow-none">
+    <Card className="flex flex-col overflow-hidden border-none shadow-xl">
       <CardHeader className="items-center pb-0">
         <CardTitle className="text-center">Retrabalho por Complexidade</CardTitle>
       </CardHeader>

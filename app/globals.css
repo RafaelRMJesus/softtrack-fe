@@ -74,11 +74,13 @@ body,
     animation: fadeIn 0.65s ease-out forwards;
   }
 
+  /*noinspection ALL*/
   .animate-fade-out {
     animation: fadeOut 0.65s ease-out forwards;
   }
 }
 
+/*noinspection ALL*/
 .page-transition {
   position: fixed;
   top: 0;
@@ -98,23 +100,27 @@ body,
   text-align: center;
 }
 
+/*noinspection ALL*/
 .page-transition-in {
   transform: translateX(-100%);
 }
 
 /* Block slides out */
+/*noinspection ALL*/
 .page-transition-out {
   transform: translateX(-200%);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  /*noinspection ALL*/
   .page-transition {
     font-size: 4rem; /* Smaller font size for tablets and smaller screens */
   }
 }
 
 @media (max-width: 480px) {
+  /*noinspection ALL*/
   .page-transition {
     font-size: 2rem; /* Even smaller font size for phones */
     padding: 20px; /* Add some padding to prevent text from touching edges */

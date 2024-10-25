@@ -59,7 +59,6 @@ export const ModalContract: React.FC<ModalProps> = ({show, onClose, selectedCont
                     </Button>
                 </div>
             </div>
-
         </div>
     );
 };

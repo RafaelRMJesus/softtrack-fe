@@ -48,8 +48,8 @@ export const AdminNavigation = ({className}: NavigationProps) => {
             icon: <User/>
         },
         {
-            name: "Personalização",
-            path: "/admin/personalizacao",
+            name: "Configurações",
+            path: "/admin/config",
             icon: <Settings/>
         },
     ];

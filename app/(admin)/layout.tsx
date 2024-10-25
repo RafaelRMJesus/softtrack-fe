@@ -7,9 +7,6 @@ import {useUser} from "@clerk/nextjs";
 import {redirect} from "next/navigation";
 
 const AdminLayout = ({ children }: { children: React.ReactNode }) => {
-
-    const { user } = useUser()
-
   return (
     <div className="fixed inset-0 flex flex-col md:flex-row">
       <AdminNavigation className="w-full md:w-auto" />
