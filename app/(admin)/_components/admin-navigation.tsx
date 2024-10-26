@@ -47,11 +47,6 @@ export const AdminNavigation = ({className}: NavigationProps) => {
             path: "/admin/consultores",
             icon: <User/>
         },
-        {
-            name: "Configurações",
-            path: "/admin/config",
-            icon: <Settings/>
-        },
     ];
 
     const currentPath = usePathname();

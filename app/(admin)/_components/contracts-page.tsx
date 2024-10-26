@@ -54,27 +54,10 @@ export function ContractManagementPage() {
         contratos[0]
     );
     const [showModal, setShowModal] = useState(false);
-    const [showFinancialData, setShowFinancialData] = useState(false);
-    const [showHoursData, setShowHoursData] = useState(false);
     const [openCombobox, setOpenCombobox] = React.useState(false);
     const [viewType, setViewType] = useState<"present" | "future">("present");
 
     const { updateContract } = useContext(ContractContext);
-
-    const toggleButtons = [
-        {
-            value: "financialData",
-            label: "Dados Financeiros",
-            state: showFinancialData,
-            setState: setShowFinancialData,
-        },
-        {
-            value: "hoursData",
-            label: "Dados de Horas",
-            state: showHoursData,
-            setState: setShowHoursData,
-        },
-    ];
 
     return (
         <div className="w-full p-6">
@@ -87,7 +70,7 @@ export function ContractManagementPage() {
                             <Button
                                 variant="outline"
                                 size="sm"
-                                className="w-[150px] justify-center border-2 border-black bg-white"
+                                className="w-full md:w-[150px] justify-center border-2 border-black bg-white"
                             >
                                 {selectedContract ? (
                                     <>{selectedContract.projeto}</>
@@ -97,12 +80,12 @@ export function ContractManagementPage() {
                             </Button>
                         </PopoverTrigger>
                         <PopoverContent
-                            className="p-0 border-2 border-black"
+                            className="p-0 border-2 border-black w-full md:w-auto max-w-xs md:max-w-sm"
                             side="right"
                             align="start"
                         >
                             <Command>
-                                <CommandInput placeholder="Procurar contrato..." />
+                                <CommandInput placeholder="Procurar contrato..." className="w-full" />
                                 <CommandList>
                                     <CommandEmpty>Nenhum contrato encontrado.</CommandEmpty>
                                     <CommandGroup>
@@ -124,6 +107,7 @@ export function ContractManagementPage() {
                             </Command>
                         </PopoverContent>
                     </Popover>
+
                 </div>
                 <Button variant="outline" onClick={() => setShowModal(true)}>
                     Ver Custo dos Consultores
@@ -159,30 +143,6 @@ export function ContractManagementPage() {
                                 {calcularCustoGestao(selectedContract).toFixed(2)}
                             </Card>
                         </div>
-                    </div>
-
-                    {/* Toggle de indicadores */}
-                    <div className="w-full bg-white rounded-lg p-6 drop-shadow-md mb-6">
-                        <h1 className="mb-4 font-bold text-2xl text-center -mt-2">Indicadores</h1>
-
-                        <ToggleGroup size="lg" type="multiple" className="flex flex-col gap-4">
-                            {toggleButtons.map((button, index) => (
-                                <ToggleGroupItem
-                                    key={index}
-                                    value={button.value}
-                                    aria-label={`Toggle ${button.label}`}
-                                    onClick={() => button.setState(!button.state)}
-                                    className={`py-2 px-4 text-center rounded-lg ${button.state
-                                        ? "drop-shadow-md bg-roxo text-white"
-                                        : "drop-shadow-md border bg-white"
-                                        }`}
-                                >
-                                    {button.state
-                                        ? `Ocultar ${button.label}`
-                                        : `Mostrar ${button.label}`}
-                                </ToggleGroupItem>
-                            ))}
-                        </ToggleGroup>
                     </div>
 
                     {/* Botões de alternância de visão */}
@@ -272,7 +232,6 @@ export function ContractManagementPage() {
                         </div>
                     ) : (
                         <div>
-                            {/* Gráficos da visão futura */}
                             <div className="grid grid-cols-1 gap-6 mb-6">
                                 <GraficoPrevisaoDemanda />
                             </div>

@@ -42,23 +42,23 @@ const chartConfig = {
   },
   Melhoria: {
     label: "Melhoria",
-    color: "#82ca9d",
+    color: "#5623E2",
   },
   Projetos: {
     label: "Projetos",
-    color: "#ffc658",
+    color: "#D9014B",
   },
   Suporte: {
     label: "Suporte",
-    color: "#ff7300",
+    color: "#EF462F",
   },
   Erro: {
     label: "Erros",
-    color: "#d0ed57",
+    color: "#FADF0B",
   },
   Problema: {
     label: "Problemas",
-    color: "#a4de6c",
+    color: "#00CEBE",
   },
 } satisfies ChartConfig;
 
@@ -67,7 +67,7 @@ const labelFormatter = (value: string) => value;
 
 export function GraficoPrevisaoDemanda() {
   return (
-    <Card className="border-none drop-shadow-md h-full w-full bg-white">
+    <Card className="border-none drop-shadow-md h-full w-full bg-white overflow-x-hidden">
       <CardHeader className="flex flex-col items-center gap-2 space-y-0 border-b py-5">
         <div className="grid gap-1 text-center">
           <CardTitle>Previsão de Demanda por Tipo</CardTitle>

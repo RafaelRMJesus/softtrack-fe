@@ -21,11 +21,11 @@ import {
 const chartConfigFuturo = {
   ausentes: {
     label: "Projeção Ausentes",
-    color: "#FFC1C1",
+    color: "#CECDEE",
   },
   disponiveis: {
     label: "Projeção Disponíveis",
-    color: "#4CAF50",
+    color: "#5623E2",
   },
 } satisfies ChartConfig;
 

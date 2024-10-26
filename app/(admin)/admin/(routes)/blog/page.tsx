@@ -145,41 +145,41 @@ const Blog = () => {
     };
 
     return (
-        <div className={"w-full h-full mb-12"}>
-            <h1 className={"text-6xl font-extrabold text-center mt-32"}>
+        <div className="w-full h-full mb-12 px-4 md:px-8 lg:px-16 xl:px-24">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-center mt-16 md:mt-20 lg:mt-24">
                 Fique por dentro das próximas atualizações{" "}
-                <span className={"bg-gradient-to-r from-roxo to-indigo-500 bg-clip-text text-transparent"}>
+                <span className="bg-gradient-to-r from-roxo to-indigo-500 bg-clip-text text-transparent">
                     SoftTrack
                 </span>
             </h1>
-            <p className={"text-xl text-center mt-4 text-muted-foreground"}>
+            <p className="text-lg md:text-xl text-center mt-4 text-muted-foreground">
                 Nós da SoftTrack prezamos pelo seu resultado, por isso estamos sempre à frente do mercado!
             </p>
 
-            <div className={"flex w-full items-center justify-center mt-12"}>
-                <div className={"h-52 rounded-xl w-3/4 bg-gradient-to-br from-violet-700 via-violet-400 to-roxo p-12"}>
-                    <div className={"bg-white w-fit h-fit px-3 py-0.5 rounded-sm"}>
-                        <p className={"text-sm font-semibold"}>Artigos em Alta</p>
+            <div className="flex w-full items-center justify-center mt-8 md:mt-12">
+                <div className="h-48 md:h-52 rounded-xl w-full md:w-3/4 bg-gradient-to-br from-violet-700 via-violet-400 to-roxo p-8 md:p-12">
+                    <div className="bg-white w-fit h-fit px-2 py-0.5 rounded-sm">
+                        <p className="text-xs md:text-sm font-semibold">Artigos em Alta</p>
                     </div>
-                    <h1 className={"mt-2 text-white text-4xl font-bold"}>SoftTrack Roadmap</h1>
-                    <p className={"mt-4 text-muted"}>
+                    <h1 className="mt-2 text-white text-2xl md:text-4xl font-bold">SoftTrack Roadmap</h1>
+                    <p className="mt-2 md:mt-4 text-sm md:text-base text-muted">
                         O Conteúdo a seguir é um planejamento dos próximos lançamentos SoftTrack.
                     </p>
                 </div>
             </div>
 
-            <div className={"w-full flex justify-center"}>
-                <div className={"flex flex-col w-3/4 justify-center mt-20"}>
-                    <div className={"flex justify-between items-center"}>
-                        <h1 className={"text-3xl font-bold"}>Artigos mais Recentes</h1>
+            <div className="w-full flex justify-center">
+                <div className="flex flex-col w-full md:w-3/4 justify-center mt-12 md:mt-20">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <h1 className="text-2xl md:text-3xl font-bold">Artigos mais Recentes</h1>
                         <Select onValueChange={handleSelectChange}>
-                            <SelectTrigger className="w-[180px]">
+                            <SelectTrigger className="w-full md:w-[180px]">
                                 <SelectValue placeholder="Filtrar por categoria"/>
                             </SelectTrigger>
                             <SelectContent>
                                 <SelectGroup>
                                     <SelectLabel>Categorias</SelectLabel>
-                                    <SelectItem value="all">Mostrar Todos</SelectItem> {/* Opção para mostrar todos */}
+                                    <SelectItem value="all">Mostrar Todos</SelectItem>
                                     {roadmapData.map((category) => (
                                         <SelectItem key={category.category} value={category.category}>
                                             {category.category}
@@ -189,7 +189,7 @@ const Blog = () => {
                             </SelectContent>
                         </Select>
                     </div>
-                    <div className={"mt-12 grid grid-cols-2 gap-8 mb-12"}>
+                    <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-12">
                         {roadmapData
                             .filter((categoryData) => selectedCategory === "all" || !selectedCategory || categoryData.category === selectedCategory)
                             .flatMap((categoryData, categoryIndex) =>
@@ -202,15 +202,14 @@ const Blog = () => {
                                             <CardTitle>{update.title}</CardTitle>
                                             <CardDescription>{update.description}</CardDescription>
                                         </CardHeader>
-                                        <CardFooter className={"text-sm text-muted-foreground flex items-center gap-x-2"}>
+                                        <CardFooter className="text-sm text-muted-foreground flex items-center gap-x-2">
                                             <Calendar />
                                             {update.date}
-                                            <div className={"bg-gray-200 text-xs font-semibold px-2 py-0.5 rounded-md ml-2"}>
+                                            <div className="bg-gray-200 text-xs font-semibold px-2 py-0.5 rounded-md ml-2">
                                                 {categoryData.category}
                                             </div>
                                         </CardFooter>
                                     </Card>
-
                                 ))
                             )}
                     </div>

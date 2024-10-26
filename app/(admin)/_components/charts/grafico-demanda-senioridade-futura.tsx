@@ -26,7 +26,7 @@ const chartDataFuturo = [
 const chartConfigFuturo = {
   demandas: {
     label: "Demandas Futuras",
-    color: "#FF7F50",  
+    color: "#5623E2",
   },
 } satisfies ChartConfig;
 

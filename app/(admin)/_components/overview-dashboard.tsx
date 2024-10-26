@@ -28,7 +28,7 @@ function A() {
 function Placeholder() {
   return (
     <div
-      className="space-y-6 text-white font-bold text-2xl w-full h-full min-h-[400px] flex flex-col items-center justify-center bg-roxo rounded-xl"
+      className="space-y-6 text-white font-bold text-2xl w-full h-full min-h-[400px] flex flex-col items-center justify-center bg-roxo rounded-xl text-center"
       data-swapy-item="b"
     >
       Você pode mover os gráficos
@@ -94,7 +94,7 @@ export function OverviewDashboard() {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative p-8">
       <div className="teste">
         <div className="slot a" data-swapy-slot="1">
           {getItemById(slotItems["1"])}

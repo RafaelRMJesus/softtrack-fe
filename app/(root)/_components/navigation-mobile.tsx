@@ -22,7 +22,7 @@ export const NavigationMobile = () => {
       {isOpen && (
         <div className="absolute top-16 left-0 w-full bg-background p-6 shadow-md">
           <nav className="flex flex-col items-center gap-y-4">
-            <Link href="/public" className="text-sm text-gray-700">
+            <Link href="/" className="text-sm text-gray-700">
               Nossa Solução
             </Link>
             <Link href="/about" className="text-sm text-gray-700">

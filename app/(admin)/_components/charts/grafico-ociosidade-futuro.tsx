@@ -9,15 +9,15 @@ import { TrendingUp } from "lucide-react";
 const chartConfigFuturo = {
   "Horas Trabalhadas Futuras": {
     label: "Horas Trabalhadas Futuras",
-    color: "#FF8C00", 
+    color: "#CECDEE",
   },
   "Horas Ociosas Futuras": {
     label: "Horas Ociosas Futuras",
-    color: "#00CED1",
+    color: "#5623E2",
   },
 } satisfies ChartConfig;
 
-const COLORS_FUTURO = ["#FF8C00", "#00CED1"];
+const COLORS_FUTURO = ["#CECDEE", "#5623E2"];
 
 const chartDataFuturo = [
   { name: "Horas Trabalhadas Futuras", value: 1000 }, 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     Drawer,
     DrawerTrigger,
@@ -12,56 +12,63 @@ import {
 import {
     Home,
     Newspaper,
-    Paperclip, Users,
-    User, Settings, ArrowLeft
+    Paperclip,
+    Users,
+    User,
+    Settings,
+    ArrowLeft, Map
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AlignJustify } from "lucide-react";
 import Link from "next/link";
 
 export const AdminNavigationMobile = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     const routes = [
         {
             name: "Visão Geral",
             path: "/admin",
-            icon: <Home className="h-6 w-6"/>,
+            icon: <Home className="h-6 w-6" />,
         },
         {
             name: "Contratos",
             path: "/admin/contratos",
-            icon: <Paperclip className="h-6 w-6"/>,
+            icon: <Paperclip className="h-6 w-6" />,
         },
         {
             name: "Equipes",
             path: "/admin/equipes",
-            icon: <Users className="h-6 w-6"/>,
+            icon: <Users className="h-6 w-6" />,
         },
         {
             name: "Demandas",
             path: "/admin/demandas",
-            icon: <Newspaper className="h-6 w-6"/>,
+            icon: <Newspaper className="h-6 w-6" />,
         },
         {
             name: "Consultores",
             path: "/admin/consultores",
-            icon: <User className="h-6 w-6"/>,
+            icon: <User className="h-6 w-6" />,
         },
         {
-            name: "Configurações",
-            path: "/admin/config",
-            icon: <Settings className="h-6 w-6"/>,
+            name: "Roadmap de Evoluções",
+            path: "/admin/blog",
+            icon: <Map className="h-6 w-6" />,
         },
         {
             name: "Landing Page",
             path: "/",
-            icon: <ArrowLeft className="h-6 w-6"/>,
+            icon: <ArrowLeft className="h-6 w-6" />,
         },
     ];
 
     return (
-        <Drawer>
+        <Drawer open={isOpen} onOpenChange={setIsOpen}>
             <DrawerTrigger>
-                <Button className="m-4"><AlignJustify /></Button>
+                <Button className="m-4" onClick={() => setIsOpen(true)}>
+                    <AlignJustify />
+                </Button>
             </DrawerTrigger>
             <DrawerContent>
                 <DrawerHeader>
@@ -74,6 +81,7 @@ export const AdminNavigationMobile = () => {
                             key={route.path}
                             href={route.path}
                             className="flex items-center space-x-2 text-roxo hover:bg-gray-100 p-2 rounded-md"
+                            onClick={() => setIsOpen(false)} // Close drawer on click
                         >
                             {route.icon}
                             <span>{route.name}</span>
@@ -82,7 +90,9 @@ export const AdminNavigationMobile = () => {
                 </div>
                 <DrawerFooter>
                     <DrawerClose>
-                        <Button variant="outline">Fechar</Button>
+                        <Button variant="outline" onClick={() => setIsOpen(false)}>
+                            Fechar
+                        </Button>
                     </DrawerClose>
                 </DrawerFooter>
             </DrawerContent>
