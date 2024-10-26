@@ -7,7 +7,6 @@ const ConfigPage = () => {
                 <h1 className={"text-3xl font-semibold"}>Configurações</h1>
                 <p>Altere as suas informações pessoais e forme um perfil que te represente!</p>
             </div>
-                
         </div>
     )
 }
