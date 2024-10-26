@@ -71,12 +71,12 @@ body,
 
 @layer utilities {
   .animate-fade-in {
-    animation: fadeIn 0.65s ease-out forwards;
+    animation: fadeIn 0.85s ease-out forwards;
   }
 
   /*noinspection ALL*/
   .animate-fade-out {
-    animation: fadeOut 0.65s ease-out forwards;
+    animation: fadeOut 0.85s ease-out forwards;
   }
 }
 
